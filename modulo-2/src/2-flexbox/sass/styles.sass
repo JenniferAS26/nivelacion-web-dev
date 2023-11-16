@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap')
+
+* 
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body
+  width: 100vw
+  height: 100vh
+  display: grid
+  place-content: center
+  font-family: 'Poppins', sans-serif
+  background-color: #012030
+
+.cards-container
+  width: 100%
+  height: 500px
+  display: flex
+  flex-wrap: wrap
+  gap: 20px
+  &__card
+    width: 150px
+    height: 180px
+    border-radius: 10px
+    display: grid
+    &--image
+      width: 100%
+      height: 150px
+      object-fit: cover
+      border-radius: 10px
+      @media (min-width: 869px)
+        height: 270px
+    &--text
+      padding: 0 10px
+      color: #F2E3D5
+      letter-spacing: 1px
+      @media (min-width: 869px)
+        font-size: 20px
+    @media (min-width: 869px)
+      width: 270px
+      height: 310px
+
+
