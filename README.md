@@ -4,5 +4,7 @@ utilizar React Router DOM v6 para la navegación en una aplicación React. Se bu
 
 ### Nota:  En cada carpeta podemos encontrar la solución teórica de cada módulo dentro de su propio archivo README.md y la solución correspondiente a la parte práctica
 
+#### En la descripción de este repositorio se puede encontrar el link de despliegue del ejercicio práctico del modulo 4
+
 
 
