@@ -1,0 +1,124 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+
+.auth-container {
+  @include m.containerStyle(
+    absolute, 
+    calc(50% - v.$mobile-min-height / 2), 
+    calc(50% - v.$mobile-min-width / 2)
+  );
+  z-index: -1;
+  &__sign-register {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    &--title {
+      display: block;
+      width: 185px;
+      @include m.titleStyle(
+        center, absolute, calc(50% - 185px / 2), 
+        50px, 1, v.$light-color, 2.4rem, 2px
+      );
+    }
+    &--image-container {
+      @include m.imageContainer(url('../assets/images/5-image.jpg'), absolute, 0, 0, 0.8);
+    }
+    &--buttons {
+      position: absolute;
+      top: calc(50% - 142px / 3);
+      width: 100%;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      gap: 50px;
+      button {
+        @include m.buttonStyle(160px, 45px, 15px, v.$primary-color, v.$light-color, 2rem);
+        font-weight: v.$medium-weight;
+        letter-spacing: 1px;
+      }
+      .register {
+        background-color: v.$quintiary-color;
+      }
+    }
+  }
+  &__signin {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: none;
+    // display: grid;
+    grid-template-rows: 50px 1fr;
+    &--header {
+      align-self: flex-end;
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1;
+      padding: 0 10px;
+      button {
+        @include m.buttonStyle(25px, 25px, 0, transparent, v.$light-color, 1.8rem);
+      }
+      .signup {
+        width: 75px;
+        font-weight: v.$bold-weight;
+        letter-spacing: 1px;
+      }
+    }
+    &--image-container {
+      @extend .auth-container__sign-register--image-container;
+    }
+    &--form-container {
+      z-index: 1;
+      padding: 25px;
+      display: grid;
+      grid-template-rows: 70px 250px;
+      justify-items: center;
+      gap: 40px;
+      .title {
+        align-self: flex-end;
+        font-size: 2.5rem;
+        color: v.$light-color;
+        letter-spacing: 1px;
+      }
+      .form {
+        display: grid;
+        align-items: center;
+        input {
+          border-radius: 20px;
+          @include m.inputStyle(
+            240px, 40px, v.$primary-color, 
+            1.4rem, 1px, v.$secondary-color, 
+            v.$tertiary-color, 4px
+          );
+        }
+        button {
+          @include m.buttonStyle(100%, 40px, 20px, v.$secondary-color, v.$light-color, 1.8rem);
+          font-weight: v.$bold-weight;
+        }
+      }
+    }
+  }
+  &__register {
+    @extend .auth-container__signin;
+    // display: none;
+    &--header {
+      @extend .auth-container__signin--header;
+      z-index: 1;
+      .signin-r {
+        width: 75px;
+        font-weight: v.$bold-weight;
+        letter-spacing: 1px;
+      }
+    }
+    &--image-container {
+      @extend .auth-container__sign-register--image-container;
+    }
+    &--form-container {
+      @extend .auth-container__signin--form-container;
+    }
+  }
+}

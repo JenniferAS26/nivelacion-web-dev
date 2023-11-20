@@ -1,0 +1,73 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.account-container {
+  display: none;
+  @include m.containerStyle(
+    absolute, 
+    calc(50% - v.$mobile-min-height / 2), 
+    calc(50% - v.$mobile-min-width / 2)
+  );
+  z-index: 2;
+  padding: 30px 15px;
+  background-color: v.$light-color;
+  &__header {
+    @include m.headerStyles(180px, column, center, center);
+    &--picture {
+      @include m.pictureStylesHeader(110px, 110px);
+    }
+    &--text {
+      margin-top: 20px;
+      font-size: 1.4rem;
+      color: v.$secondary-color;
+    }
+    &--title {
+      font-size: 2rem;
+      letter-spacing: 1px;
+      color: v.$quintiary-color;
+    }
+  }
+  &__main {
+    width: 100%;
+    height: auto;
+    &--form {
+      padding: 20px;
+      width: 100%;
+      height: auto;
+      display: grid;
+      justify-items: center;
+      gap: 35px;
+      input {
+        @include m.inputStyle(280px, 40px, v.$quintiary-color, 1.6rem, 1px, v.$secondary-color, v.$quintiary-color, 2px);
+        border-radius: 20px;
+        background-color: v.$primary-color-transparent;
+        &:focus {
+          background-color: v.$quintiary-color-transparent;
+        }
+      }
+      button {
+        @include m.buttonStyle(150px, 40px, 20px, v.$primary-color, v.$light-color, 1.6rem);
+        font-weight: v.$bold-weight;
+        letter-spacing: 1px;
+        &:hover {
+          background-color: v.$quintiary-color;
+        }
+      }
+    }
+  }
+  &__footer {
+    @include m.footerStyles;
+    button {
+      @include m.buttonStyle(
+        50px, 50px, 30%, 
+        v.$light-color, rgba($color: v.$dark-color, $alpha: 0.2), 2.4rem
+      );
+      &:hover {
+        color: v.$secondary-color;
+      }
+    }
+    .account-profile {
+      color: v.$secondary-color;
+    }
+  }
+}

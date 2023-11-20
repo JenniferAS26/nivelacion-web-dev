@@ -1,0 +1,106 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "jenn_26",
+      "email": "jennifer@gmail.com",
+      "password": "jenn123"
+    },
+    {
+      "username": "carmelit@",
+      "email": "carmelita@gmail.com",
+      "password": "carmelit@1234",
+      "id": 2
+    },
+    {
+      "username": "santiago_19",
+      "email": "santiago@gmail.com",
+      "password": "santi123",
+      "id": 3
+    },
+    {
+      "username": "andy_me",
+      "email": "andresmejia@gmail.com",
+      "password": "@ndy123",
+      "id": 4
+    },
+    {
+      "username": "kevin_ol",
+      "email": "kevinolarte@gmail.com",
+      "password": "k3vin123",
+      "id": 5
+    },
+    {
+      "username": "sophie_the_cat",
+      "email": "sophie@gmail.com",
+      "password": "sh0phi3",
+      "id": 6
+    },
+    {
+      "username": "amanda123",
+      "email": "amanda@gmail.com",
+      "password": "amanda1234",
+      "id": 7
+    },
+    {
+      "username": "karen_05",
+      "email": "karen@gmail.com",
+      "password": "karen12345",
+      "id": 8
+    },
+    {
+      "username": "loren",
+      "email": "lorena@gmail.com",
+      "password": "Lorena123",
+      "id": 9
+    },
+    {
+      "username": "",
+      "email": "",
+      "password": "",
+      "id": 10
+    },
+    {
+      "username": "manu_123",
+      "email": "manuela@gmail.com",
+      "password": "m@nu3l@",
+      "id": 11
+    },
+    {
+      "username": "cata_ro",
+      "email": "catalina@gmail.com",
+      "password": "catalina",
+      "id": 12
+    },
+    {
+      "username": "albeiro",
+      "email": "albeiro@gmail.com",
+      "password": "alberiro123",
+      "id": 13
+    },
+    {
+      "username": "alberto",
+      "email": "alberto@mail.com",
+      "password": "alberto123",
+      "id": 14
+    },
+    {
+      "username": "jorge_ba",
+      "email": "jorge@hotmail.com",
+      "password": "jorge123",
+      "id": 15
+    },
+    {
+      "username": "valentina",
+      "email": "valentina@gmail.com",
+      "password": "valen1235@",
+      "id": 16
+    },
+    {
+      "username": "sofia",
+      "email": "sofia@yahoo.es",
+      "password": "S0fi@",
+      "id": 17
+    }
+  ]
+}

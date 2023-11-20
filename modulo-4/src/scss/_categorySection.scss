@@ -1,0 +1,89 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.category-container {
+  display: none;
+  @include m.containerStyle(
+    absolute, 
+    calc(50% - v.$mobile-min-height / 2), 
+    calc(50% - v.$mobile-min-width / 2)
+  );
+  z-index: 2;
+  padding: 30px 15px;
+  background-color: v.$light-color;
+  &__header {
+    @include m.headerStyles(70px, row, space-between, center);
+    &--button {
+      @include m.buttonStyle(
+        50px, 50px, 30%, 
+        v.$light-color, v.$secondary-color, 2.4rem
+      );
+    }
+    &--picture {
+      @include m.pictureStylesHeader(55px, 55px);
+    }
+  }
+  &__main {
+    width: 100%;
+    height: auto;
+    &--title {
+      font-size: 2.2rem;
+      color: v.$primary-color;
+    }
+    &--cards {
+      @include m.cardContainer;
+      .card {
+        cursor: pointer;
+        padding: 20px;
+        width: 100%;
+        height: 90px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 20px;
+        box-shadow:  -5px 5px 10px #f7f7f7,
+             5px -5px 10px #ffffff;
+        &__image-category {
+          width: 50px;
+          height: 50px;
+          font-size: 3.8rem;
+          color: v.$secondary-color;
+        }
+        &__name-quantity {
+          width: 150px;
+          &--name {
+            color: v.$primary-color;
+            font-size: 1.6rem;
+          }
+          &--quantity {
+            color: v.$secondary-color;
+            font-size: 1.2rem;
+          }
+        }
+        &__chevron-right {
+          @include m.buttonStyle(20px, 20px, 50%, transparent, v.$secondary-color, 1.6rem);
+        }
+        &:hover {
+          transform: scale(1.01);
+          background-color: rgba($color: v.$quaternary-color, $alpha: 0.1)
+        }
+      }
+      
+    }
+  }
+  &__footer {
+    @include m.footerStyles;
+    button {
+      @include m.buttonStyle(
+        50px, 50px, 30%, 
+        v.$light-color, rgba($color: v.$dark-color, $alpha: 0.2), 2.4rem
+      );
+      &:hover {
+        color: v.$secondary-color;
+      }
+    }
+    .category-search {
+      color: v.$secondary-color;
+    }
+  }
+}

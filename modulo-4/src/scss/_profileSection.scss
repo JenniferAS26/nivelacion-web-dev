@@ -1,0 +1,160 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.profile-container {
+  display: none;
+  @include m.containerStyle(
+    absolute, 
+    calc(50% - v.$mobile-min-height / 2), 
+    calc(50% - v.$mobile-min-width / 2)
+  );
+  z-index: 2;
+  padding: 30px 15px;
+  background-color: v.$light-color;
+  &__header {
+    @include m.headerStyles(70px, row, space-between, center);
+    &--messages {
+      width: 200px;
+      h3 {
+        font-size: 1.6rem;
+        span {
+          color: v.$primary-color;
+        }
+      }
+      p {
+        font-size: 1rem;
+        color: v.$secondary-color;
+      }
+    }
+    &--picture {
+      @include m.pictureStylesHeader(55px, 55px);
+    }
+  }
+  &__search {
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+    &--form {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      input {
+        @include m.inputStyle(
+          250px, 40px, v.$primary-color,
+          1.4rem, 1px, v.$secondary-color, 
+          v.$tertiary-color, 2px
+        );
+        background-color: v.$primary-color-transparent;
+        border-radius: 20px;
+      }
+      button {
+        @include m.buttonStyle(25px, 40px, 0, transparent, v.$primary-color, 1.8rem);
+        position: absolute;
+        right: 110px;
+      }
+    }
+  }
+  &__categories {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    &--category {
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      button {
+        @include m.buttonStyle(
+          50px, 50px, 30%, 
+          v.$light-color, v.$secondary-color, 2.4rem
+        );
+        box-shadow:  -5px 5px 10px #f7f7f7,
+             5px -5px 10px #ffffff;
+      }
+      span {
+        color: v.$secondary-color;
+      }
+    }
+  }
+  &__discover {
+    width: 100%;
+    height: auto;
+    &--title {
+      margin-bottom: 10px;
+      font-size: 2.2rem;
+      color: v.$primary-color;
+      letter-spacing: 1px;
+    }
+    &--links {
+      width: 100%;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      a {
+        font-size: 1.4rem;
+        font-weight: v.$medium-weight;
+        color: rgba($color: v.$primary-color, $alpha: 0.5);
+        &:hover {
+          color: v.$primary-color;
+          text-decoration: underline;
+        }
+      }
+    }
+    &--movies-container {
+      width: 100%;
+      height: 200px;
+      .movie-card {
+        cursor: pointer;
+        width: 100%;
+        height: 200px;
+        position: relative;
+        &__image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 20px;
+          opacity: 0.6;
+          z-index: 0;
+          position: absolute;
+        }
+        &__title {
+          @include m.titleStyle(left, absolute, 15px, 15px, 1, v.$light-color, 2rem, 1px);
+        }
+        &__text-year {
+          @include m.titleStyle(left, absolute, 15px, 45px, 1, v.$light-color, 1.6rem, 1px);
+        }
+        &__text-genre {
+          @include m.titleStyle(left, absolute, 15px, 65px, 1, v.$light-color, 1.4rem, 1px);
+          display: flex;
+          gap: 5px;
+          width: 100%;
+          a {
+            color: v.$light-color;
+            font-weight: v.$bold-weight;
+          }
+        }
+      }
+    }
+  }
+  &__footer {
+    @include m.footerStyles;
+    button {
+      @include m.buttonStyle(
+        50px, 50px, 30%, 
+        v.$light-color, rgba($color: v.$dark-color, $alpha: 0.2), 2.4rem
+      );
+      &:hover {
+        color: v.$secondary-color;
+      }
+    }
+    .profile-home {
+      color: v.$secondary-color;
+    }
+  }
+}
+
+
+.button-link {
+  @include m.buttonStyle(auto, auto, none, transparent, rgba($color: v.$primary-color, $alpha: 0.5), 1.4rem);
+}

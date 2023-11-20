@@ -1,0 +1,66 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+@function pow($base, $exponent) {
+  $result: 1;
+  @for $_ from 1 through $exponent {
+    $result: $result * $base;
+  }
+  @return $result;
+}
+
+.start-container {
+  @include m.containerStyle(
+    absolute, 
+    calc(50% - v.$mobile-min-height / 2), 
+    calc(50% - v.$mobile-min-width / 2)
+  );
+  &__first {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    &--title {
+      @include m.titleStyle(
+        center, absolute, calc(50% - 86.5px), 
+        50px, 1, v.$light-color, 3.4rem, 2px
+      );
+    }
+    &--text {
+      @include m.titleStyle(
+        center, absolute, calc(50% - 51px), 
+        85px, 1, v.$light-color, 2.2rem, 1px
+      );
+    }
+    &--image-container {
+      @include m.imageContainer(url('../assets/images/2-image.jpg'), absolute, 0, 0, 0.9);
+    }
+    &--button {
+      position: absolute;
+      bottom: pow(2, 2) * 5px;
+      left: calc(50% - 50px);
+      @include m.buttonStyle(100px, 30px, 10px, v.$tertiary-color, v.$light-color, 2rem);
+    }
+  }
+  &__second, &__third {
+    @extend .start-container__first;
+    &--title {
+      @extend .start-container__first--title;
+      left: calc(50% - 125.5px);
+    }
+    &--image-container {
+      @extend .start-container__first--image-container;
+    }
+    &--button {
+      @extend .start-container__first--button;
+    }
+  }
+  &__second {
+    display: none;
+  }
+  &__third {
+    display: none;
+    &--title {
+      left: calc(50% - 60px);
+    }
+  }
+}

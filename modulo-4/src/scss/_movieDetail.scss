@@ -1,0 +1,97 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.movie-detail {
+  display: none;
+  @include m.containerStyle(
+    absolute, 
+    calc(50% - v.$mobile-min-height / 2), 
+    calc(50% - v.$mobile-min-width / 2)
+  );
+  z-index: 2;
+  background-color: v.$light-color;
+  &__header {
+    padding: 30px 15px;
+    @include m.headerStyles(70px, row, space-between, center);
+    &--button {
+      @include m.buttonStyle(
+        50px, 50px, 30%, 
+        transparent, v.$light-color, 2.4rem
+      );
+      z-index: 2;
+    }
+    .movie-detail-like:hover {
+      color: v.$quaternary-color;
+    }
+  }
+  &__image-container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    &--image {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      border-top-left-radius: 24px;
+      border-top-right-radius: 24px;
+    }
+    &--title {
+      @include m.textMovieDetailStyle(80px, 30px, 2, v.$light-color, 2.6rem, 1px);
+    }
+    &--text {
+      @include m.textMovieDetailStyle(67px, 30px, 2, rgba($color: v.$light-color, $alpha: 0.8), 1.5rem, 1px);
+    }
+  }
+  &__details {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 300px;
+    z-index: 2;
+    background-color: v.$light-color;
+    padding: 20px 15px;
+    border-radius: 20px;
+    .genres  {
+      width: 100%;
+      height: 90px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__card {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        justify-items: center;
+        &--icon {
+          @include m.buttonStyle(60px, 60px, 30%, v.$light-color, v.$secondary-color, 2.4rem);
+          box-shadow:  -5px 5px 10px #f7f7f7,
+             5px -5px 10px #ffffff;
+        }
+        &--text {
+          align-self: end;
+          color: v.$secondary-color;
+          font-size: 1.4rem;
+        }
+      }
+    }
+    &--description {
+      width: 100%;
+      height: 100%;
+      margin-top: 20px;
+      .title {
+        font-size: 1.8rem;
+        color: v.$primary-color;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+      }
+      .text {
+        font-size: 1.2rem;
+        text-align: justify;
+        color: v.$secondary-color;
+      }
+    }
+  }
+}

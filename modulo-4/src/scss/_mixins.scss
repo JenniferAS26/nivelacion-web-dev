@@ -1,0 +1,113 @@
+@use 'variables' as v;
+
+@mixin containerStyle($position, $top, $left) {
+  width: v.$mobile-min-width;
+  height: v.$mobile-min-height;
+  border-radius: 25px;
+  position: $position;
+  top: $top;
+  left: $left;
+}
+
+@mixin titleStyle($align, $position, $left, $top, $z-i, $color, $f-s, $letter-sp) {
+  text-align: $align;
+  position: $position;
+  left: $left;
+  top: $top;
+  z-index: $z-i;
+  color: $color;
+  font-size: $f-s;
+  letter-spacing: $letter-sp;
+}
+
+@mixin imageContainer($bg-image, $position, $top, $z-i, $opacity) {
+  width: 100%;
+  height: 100%;
+  background-image: $bg-image;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: $position;
+  top: $top;
+  z-index: $z-i;
+  border-radius: 25px;
+  opacity: $opacity;
+}
+
+@mixin buttonStyle($width, $height, $b-r, $bg-color, $color, $f-s) {
+  cursor: pointer;
+  width: $width;
+  height: $height;
+  border: none;
+  border-radius: $b-r;
+  background-color: $bg-color;
+  color: $color;
+  font-size: $f-s;
+}
+
+@mixin inputStyle($width, $height, $color, $f-s, $letter-sp, $ph-color, $focus-color, $focus-th) {
+  width: $width;
+  height: $height;
+  border: none;
+  padding: 15px 20px;
+  color: $color;
+  font-size: $f-s;
+  font-weight: v.$bold-weight;
+  letter-spacing: $letter-sp;
+  &::placeholder {
+    color: $ph-color;
+    font-size: $f-s;
+    letter-spacing: $letter-sp;
+  }
+  &:focus {
+    outline: $focus-th solid $focus-color;
+  }
+}
+
+@mixin headerStyles($height, $direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  width: 100%;
+  height: $height;
+}
+
+@mixin footerStyles {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin pictureStylesHeader($width, $height) {
+  width: $width;
+  height: $height;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+@mixin cardContainer {
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  display: grid;
+  gap: 20px;
+}
+
+@mixin textMovieDetailStyle($bottom, $left, $z-i, $color, $f-s, $letter-sp) {
+  position: absolute;
+  bottom: $bottom;
+  left: $left;
+  z-index: $z-i;
+  color: $color;
+  font-size: $f-s;
+  letter-spacing: $letter-sp;
+}
