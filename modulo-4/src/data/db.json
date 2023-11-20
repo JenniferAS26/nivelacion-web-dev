@@ -101,6 +101,12 @@
       "email": "sofia@yahoo.es",
       "password": "S0fi@",
       "id": 17
+    },
+    {
+      "username": "jenn_as",
+      "email": "jenn@gmail.com",
+      "password": "jenn123",
+      "id": 18
     }
   ]
 }
