@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000/users'
+const BASE_URL = 'https://backend-comunicacion-servidor.onrender.com/users'
 
 const fetchUsers = async () => {
   try {
